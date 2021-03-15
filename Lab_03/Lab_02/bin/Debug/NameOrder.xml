@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<Library xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Books>
+    <Book>
+      <UDK>21</UDK>
+      <size>6</size>
+      <year>1980</year>
+      <numb>&lt;200</numb>
+      <publisher>"АСТ"</publisher>
+      <name>we</name>
+      <auth>we</auth>
+      <format>.pdf</format>
+      <date>2021-02-22T01:52:02.6609252+03:00</date>
+      <result>21 - we: we, 1980
+"АСТ".pdf  22.02.2021 1:52:02
+size:6 (&lt;200)</result>
+    </Book>
+    <Book>
+      <UDK>234123</UDK>
+      <size>5</size>
+      <year>1973</year>
+      <numb>&lt;200</numb>
+      <publisher>"АСТ" , "Эксмо"</publisher>
+      <name>Завтрак для чемпионов</name>
+      <auth>Курт Воннегут</auth>
+      <format>.pdf</format>
+      <date>2021-02-22T01:06:53.6987705+03:00</date>
+      <result>234123 - Курт Воннегут: Завтрак для чемпионов, 1973
+"АСТ" , "Эксмо".pdf  22.02.2021 1:06:53
+size:5 (&lt;200)</result>
+    </Book>
+    <Book>
+      <UDK>234123</UDK>
+      <size>5</size>
+      <year>1989</year>
+      <numb>&lt;200</numb>
+      <publisher> , "Эксмо" , "МИФ"</publisher>
+      <name>Железо, ржавое железо</name>
+      <auth>Энтони Берджесс</auth>
+      <format>.txt</format>
+      <date>2021-02-22T01:06:53.6987705+03:00</date>
+      <result>234123 - Энтони Берджесс: Железо, ржавое железо, 1989
+ , "Эксмо" , "МИФ".txt  22.02.2021 1:06:53
+size:5 (&lt;200)</result>
+    </Book>
+    <Book>
+      <UDK>12343</UDK>
+      <size>3</size>
+      <year>1900</year>
+      <numb>200-500</numb>
+      <publisher>"Эксмо"</publisher>
+      <name>Золушка</name>
+      <auth>Братья Гримм</auth>
+      <format>.docx</format>
+      <date>2021-02-22T01:06:53.6987705+03:00</date>
+      <result>12343 - Братья Гримм: Золушка, 1900
+"Эксмо".docx  22.02.2021 1:06:53
+size:3 (200-500)</result>
+    </Book>
+  </Books>
+</Library>

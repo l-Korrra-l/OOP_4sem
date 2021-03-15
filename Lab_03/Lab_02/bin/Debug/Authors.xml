@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<ArrayOfAuthor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Author>
+    <FIO>Иванов Иван Иванович</FIO>
+    <country>Беларусь</country>
+    <age>123</age>
+    <id>134</id>
+  </Author>
+  <Author>
+    <FIO>Иванов Иван Иович</FIO>
+    <country>Беларусь</country>
+    <age>123</age>
+    <id>134</id>
+  </Author>
+  <Author>
+    <FIO>SA SA SAенр</FIO>
+    <country>Бельгия</country>
+    <age>134</age>
+    <id>456</id>
+  </Author>
+  <Author>
+    <FIO>Петр Вроде Первый</FIO>
+    <country>Беларусь</country>
+    <age>123</age>
+    <id>345</id>
+  </Author>
+  <Author>
+    <FIO>Андрей Андр Андр</FIO>
+    <country>Беларусь</country>
+    <age>234</age>
+    <id>3456</id>
+  </Author>
+  <Author>
+    <FIO>Фдл Ыдл Лып</FIO>
+    <country>Бельгия</country>
+    <age>234</age>
+    <id>758</id>
+  </Author>
+</ArrayOfAuthor>

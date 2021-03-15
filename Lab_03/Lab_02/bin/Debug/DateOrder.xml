@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<Library xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Books>
+    <Book>
+      <UDK>123</UDK>
+      <size>6</size>
+      <year>1980</year>
+      <numb>&lt;200</numb>
+      <publisher>"АСТ"</publisher>
+      <name>123</name>
+      <auth>123</auth>
+      <format>.epub</format>
+      <date>2021-02-28T23:48:40.1186436+03:00</date>
+      <result>123 - 123: 123, 1980
+"АСТ".epub  28.02.2021 23:48:40
+size:6 (&lt;200)</result>
+    </Book>
+    <Book>
+      <UDK>123</UDK>
+      <size>6</size>
+      <year>1980</year>
+      <numb>&lt;200</numb>
+      <publisher>"АСТ"</publisher>
+      <name>123</name>
+      <auth>123</auth>
+      <format>.epub</format>
+      <date>2021-02-28T23:48:40.1186436+03:00</date>
+      <result>123 - 123: 123, 1980
+"АСТ".epub  28.02.2021 23:48:40
+size:6 (&lt;200)</result>
+    </Book>
+    <Book>
+      <UDK>123</UDK>
+      <size>6</size>
+      <year>1980</year>
+      <numb>&lt;200</numb>
+      <publisher>"АСТ"</publisher>
+      <name>123</name>
+      <auth>123</auth>
+      <format>.epub</format>
+      <date>2021-02-28T23:48:40.1186436+03:00</date>
+      <result>123 - 123: 123, 1980
+"АСТ".epub  28.02.2021 23:48:40
+size:6 (&lt;200)</result>
+    </Book>
+    <Book>
+      <UDK>123</UDK>
+      <size>6</size>
+      <year>1980</year>
+      <numb>&lt;200</numb>
+      <publisher>"АСТ"</publisher>
+      <name>123</name>
+      <auth>123</auth>
+      <format>.epub</format>
+      <date>2021-02-28T23:48:40.1186436+03:00</date>
+      <result>123 - 123: 123, 1980
+"АСТ".epub  28.02.2021 23:48:40
+size:6 (&lt;200)</result>
+    </Book>
+    <Book>
+      <UDK>123</UDK>
+      <size>6</size>
+      <year>1980</year>
+      <numb>&lt;200</numb>
+      <publisher>"АСТ"</publisher>
+      <name>123</name>
+      <auth>123</auth>
+      <format>.epub</format>
+      <date>2021-02-28T23:48:40.1186436+03:00</date>
+      <result>123 - 123: 123, 1980
+"АСТ".epub  28.02.2021 23:48:40
+size:6 (&lt;200)</result>
+    </Book>
+    <Book>
+      <UDK>123</UDK>
+      <size>6</size>
+      <year>1980</year>
+      <numb>&lt;200</numb>
+      <publisher>"АСТ"</publisher>
+      <name>123</name>
+      <auth>123</auth>
+      <format>.epub</format>
+      <date>2021-02-28T23:48:40.1186436+03:00</date>
+      <result>123 - 123: 123, 1980
+"АСТ".epub  28.02.2021 23:48:40
+size:6 (&lt;200)</result>
+    </Book>
+    <Book>
+      <UDK>123</UDK>
+      <size>6</size>
+      <year>1980</year>
+      <numb>&lt;200</numb>
+      <publisher>"АСТ"</publisher>
+      <name>123</name>
+      <auth>123</auth>
+      <format>.epub</format>
+      <date>2021-02-28T23:48:40.1186436+03:00</date>
+      <result>123 - 123: 123, 1980
+"АСТ".epub  28.02.2021 23:48:40
+size:6 (&lt;200)</result>
+    </Book>
+    <Book>
+      <UDK>123</UDK>
+      <size>6</size>
+      <year>1980</year>
+      <numb>&lt;200</numb>
+      <publisher>"АСТ"</publisher>
+      <name>123</name>
+      <auth>123</auth>
+      <format>.epub</format>
+      <date>2021-02-28T23:48:40.1186436+03:00</date>
+      <result>123 - 123: 123, 1980
+"АСТ".epub  28.02.2021 23:48:40
+size:6 (&lt;200)</result>
+    </Book>
+    <Book>
+      <UDK>123</UDK>
+      <size>1</size>
+      <year>1980</year>
+      <numb>&lt;200</numb>
+      <publisher>"Эксмо"</publisher>
+      <name>234</name>
+      <auth>фы</auth>
+      <format>.txt</format>
+      <date>2021-03-01T08:37:34.4850751+03:00</date>
+      <result>123 - фы: 234, 1980
+"Эксмо".txt  01.03.2021 8:37:34
+size:1 (&lt;200)</result>
+    </Book>
+  </Books>
+</Library>
