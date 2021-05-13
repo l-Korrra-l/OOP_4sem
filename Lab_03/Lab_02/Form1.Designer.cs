@@ -70,19 +70,20 @@ namespace Lab_02
             this.поНазваниюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.поДатеЗагрузкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.добавитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.книгуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.автораToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.label11 = new System.Windows.Forms.ToolStripStatusLabel();
             this.label13 = new System.Windows.Forms.ToolStripStatusLabel();
             this.label12 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.добавитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.книгуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.автораToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.domainUpDown1 = new System.Windows.Forms.DomainUpDown();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.libraryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button7 = new System.Windows.Forms.Button();
+            this.lab05ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.libraryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -418,7 +419,8 @@ namespace Lab_02
             this.файлToolStripMenuItem,
             this.сортировкаToolStripMenuItem,
             this.оПрограммеToolStripMenuItem,
-            this.добавитьToolStripMenuItem});
+            this.добавитьToolStripMenuItem,
+            this.lab05ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1152, 28);
@@ -503,6 +505,29 @@ namespace Lab_02
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
             // 
+            // добавитьToolStripMenuItem
+            // 
+            this.добавитьToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.книгуToolStripMenuItem,
+            this.автораToolStripMenuItem});
+            this.добавитьToolStripMenuItem.Name = "добавитьToolStripMenuItem";
+            this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(90, 24);
+            this.добавитьToolStripMenuItem.Text = "Добавить";
+            // 
+            // книгуToolStripMenuItem
+            // 
+            this.книгуToolStripMenuItem.Name = "книгуToolStripMenuItem";
+            this.книгуToolStripMenuItem.Size = new System.Drawing.Size(142, 26);
+            this.книгуToolStripMenuItem.Text = "Книгу";
+            this.книгуToolStripMenuItem.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // автораToolStripMenuItem
+            // 
+            this.автораToolStripMenuItem.Name = "автораToolStripMenuItem";
+            this.автораToolStripMenuItem.Size = new System.Drawing.Size(142, 26);
+            this.автораToolStripMenuItem.Text = "Автора";
+            this.автораToolStripMenuItem.Click += new System.EventHandler(this.автораToolStripMenuItem_Click);
+            // 
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(139, 440);
@@ -530,7 +555,7 @@ namespace Lab_02
             this.label11,
             this.label13,
             this.label12});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 479);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 496);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1152, 26);
             this.statusStrip1.TabIndex = 42;
@@ -554,29 +579,6 @@ namespace Lab_02
             this.label12.Size = new System.Drawing.Size(162, 20);
             this.label12.Text = "Количество объектов:";
             // 
-            // добавитьToolStripMenuItem
-            // 
-            this.добавитьToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.книгуToolStripMenuItem,
-            this.автораToolStripMenuItem});
-            this.добавитьToolStripMenuItem.Name = "добавитьToolStripMenuItem";
-            this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(90, 24);
-            this.добавитьToolStripMenuItem.Text = "Добавить";
-            // 
-            // книгуToolStripMenuItem
-            // 
-            this.книгуToolStripMenuItem.Name = "книгуToolStripMenuItem";
-            this.книгуToolStripMenuItem.Size = new System.Drawing.Size(142, 26);
-            this.книгуToolStripMenuItem.Text = "Книгу";
-            this.книгуToolStripMenuItem.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // автораToolStripMenuItem
-            // 
-            this.автораToolStripMenuItem.Name = "автораToolStripMenuItem";
-            this.автораToolStripMenuItem.Size = new System.Drawing.Size(142, 26);
-            this.автораToolStripMenuItem.Text = "Автора";
-            this.автораToolStripMenuItem.Click += new System.EventHandler(this.автораToolStripMenuItem_Click);
-            // 
             // domainUpDown1
             // 
             this.domainUpDown1.Location = new System.Drawing.Point(12, 138);
@@ -595,10 +597,6 @@ namespace Lab_02
             this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);
             this.textBox3.KeyUp += new System.Windows.Forms.KeyEventHandler(this.format_KeyUp);
             // 
-            // libraryBindingSource
-            // 
-            this.libraryBindingSource.DataSource = typeof(Lab_02.Library);
-            // 
             // button7
             // 
             this.button7.Location = new System.Drawing.Point(457, 439);
@@ -609,11 +607,22 @@ namespace Lab_02
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
+            // lab05ToolStripMenuItem
+            // 
+            this.lab05ToolStripMenuItem.Name = "lab05ToolStripMenuItem";
+            this.lab05ToolStripMenuItem.Size = new System.Drawing.Size(63, 24);
+            this.lab05ToolStripMenuItem.Text = "Lab05";
+            this.lab05ToolStripMenuItem.Click += new System.EventHandler(this.lab05ToolStripMenuItem_Click);
+            // 
+            // libraryBindingSource
+            // 
+            this.libraryBindingSource.DataSource = typeof(Lab_02.Library);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1152, 505);
+            this.ClientSize = new System.Drawing.Size(1152, 522);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.domainUpDown1);
             this.Controls.Add(this.statusStrip1);
@@ -722,6 +731,7 @@ namespace Lab_02
         private System.Windows.Forms.DomainUpDown domainUpDown1;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.ToolStripMenuItem lab05ToolStripMenuItem;
     }
 }
 

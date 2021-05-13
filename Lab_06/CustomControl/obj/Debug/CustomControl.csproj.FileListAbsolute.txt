@@ -1,0 +1,2 @@
+C:\Users\User\Documents\ооп\OOP_4sem\Lab_06\CustomControl\obj\Debug\CustomControl.csprojAssemblyReference.cache
+C:\Users\User\Documents\ооп\OOP_4sem\Lab_06\CustomControl\obj\Debug\CustomControl_MarkupCompile.cache

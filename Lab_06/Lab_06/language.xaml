@@ -1,0 +1,25 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Lab_6_7.Languages" xmlns:v="clr-namespace:System;assembly=mscorlib">
+    <v:String x:Key="m_Home">Home</v:String>
+    <v:String x:Key="m_Cart">Cart</v:String>
+    <v:String x:Key="m_Search">Search</v:String>
+    <v:String x:Key="m_Options">Options</v:String>
+    <v:String x:Key="m_Title">Part Shop</v:String>
+    <v:String x:Key="m_OptionThemes">Themes</v:String>
+    <v:String x:Key="m_OptionLanguage">Language</v:String>
+    <v:String x:Key="m_SearchAdd">Add</v:String>
+    <v:String x:Key="m_SearchSave">Save</v:String>
+    <v:String x:Key="m_SearchUndo">Undo</v:String>
+    <v:String x:Key="m_SearchRedo">Redo</v:String>
+    <v:String x:Key="m_SearchSearch">Search</v:String>
+    <v:String x:Key="m_SearchRefresh">Refresh</v:String>
+    <v:String x:Key="m_Search1">Search by name</v:String>
+    <v:String x:Key="m_Search2">Search by price</v:String>
+    <v:String x:Key="m_Name">Name: </v:String>
+    <v:String x:Key="m_Description">Description: </v:String>
+    <v:String x:Key="m_Quntity">Quantity: </v:String>
+    <v:String x:Key="m_Price">Price: </v:String>
+    <v:String x:Key="m_Props">Enter properties</v:String>
+    <v:String x:Key="m_ImgLink">Image link</v:String>
+</ResourceDictionary>

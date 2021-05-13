@@ -495,5 +495,23 @@ namespace Lab_02
             Config = AppSettings.GetInstance(this.Size.ToString());
             MessageBox.Show(Config.settings);
         }
+
+        public Lab05_ newForm5 = new Lab05_();
+        private void lab05ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            newForm5.Show();
+            if (newForm5 != null && newForm5.IsDisposed != true) lab05ToolStripMenuItem.Enabled = false;
+
+            newForm5.FormClosed += new FormClosedEventHandler(FormClosed05);
+            label13.Text = $"Последнее действие: {lab05ToolStripMenuItem.Text}";
+
+        }
+
+        public void FormClosed05(object sender, FormClosedEventArgs e)
+        {
+            this.button4.Enabled = true;
+            newForm5 = new Lab05_();
+        }
     }
 }
