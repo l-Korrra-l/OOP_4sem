@@ -30,20 +30,34 @@ namespace Lab_06
             partList.ItemsSource = prods;
         }
 
+        public UControl(bool a)
+        {
+            InitializeComponent();
+            using (DataBase db = new DataBase())
+            {
+                prods = db.Sort();
+            }
+            partList.ItemsSource = prods;
+        }
+
         public List<Prod> GetItems()
         {
             List<Prod> parts = new List<Prod>();
             try
             {
                 DataContractJsonSerializer jsonForm = new DataContractJsonSerializer(typeof(List<Prod>));
-                using (FileStream f = new FileStream("products.json", FileMode.OpenOrCreate))
+                    using (FileStream f = new FileStream("products.json", FileMode.OpenOrCreate))
+                    {
+                        parts = (List<Prod>)jsonForm.ReadObject(f);
+                    }
+                using (DataBase db = new DataBase())
                 {
-                    parts = (List<Prod>)jsonForm.ReadObject(f);
+                    parts = db.GetProds();
                 }
 
             }
             catch (Exception e)
-            {
+            {   
                 MessageBox.Show("а файла то нет");
                 Prod pr = new Prod();
                 pr.Name = "Hi";

@@ -23,3 +23,5 @@ C:\Users\User\Documents\ооп\OOP_4sem\Lab_10\Lab_10\bin\Debug\EntityFramework.
 C:\Users\User\Documents\ооп\OOP_4sem\Lab_10\Lab_10\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\User\Documents\ооп\OOP_4sem\Lab_10\Lab_10\bin\Debug\System.Data.SQLite.xml
 C:\Users\User\Documents\ооп\OOP_4sem\Lab_10\Lab_10\obj\Debug\Lab_10.csproj.CopyComplete
+C:\Users\User\Documents\ооп\OOP_4sem\Lab_10\Lab_10\obj\Debug\AddWindow.g.cs
+C:\Users\User\Documents\ооп\OOP_4sem\Lab_10\Lab_10\obj\Debug\AddWindow.baml

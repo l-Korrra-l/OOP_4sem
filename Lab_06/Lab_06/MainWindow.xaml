@@ -57,6 +57,7 @@
                         <TextBlock Text="{DynamicResource m_Home}" VerticalAlignment="Center" FontSize="20"/>
                     </StackPanel>
                 </ListViewItem>
+  
                 <ListViewItem Height="60" Foreground="White"  HorizontalAlignment="Left" Background="{x:Null}">
                     <StackPanel Orientation="horizontal" >
                         <materialDesign:PackIcon Width="30" Height="30" Kind="Magnify" VerticalAlignment="Center" Margin="5" />
@@ -83,9 +84,22 @@
                     </StackPanel>
                 </ListViewItem>
                 
+                
                 <ListViewItem>
 
                     <Button x:Name="myButton" Template="{StaticResource btTemplate}" Height="40" Width="100" Click="myButton_Click">Lab08</Button>
+                </ListViewItem>
+                <ListViewItem Height="60" Foreground="White"  HorizontalAlignment="Left" Background="{x:Null}">
+                    <StackPanel Orientation="horizontal" >
+                        <materialDesign:PackIcon Width="30" Height="30" Kind="Home" VerticalAlignment="Center" Margin="5" />
+                        <TextBlock Text="Sorted" VerticalAlignment="Center" FontSize="20"/>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem Height="60" Foreground="White"  HorizontalAlignment="Left" Background="{x:Null}">
+                    <StackPanel Orientation="horizontal" >
+                        <materialDesign:PackIcon Width="30" Height="30" Kind="Home" VerticalAlignment="Center" Margin="5" />
+                        <TextBlock Text="Транзакция" VerticalAlignment="Center" FontSize="20"/>
+                    </StackPanel>
                 </ListViewItem>
             </ListView>
             

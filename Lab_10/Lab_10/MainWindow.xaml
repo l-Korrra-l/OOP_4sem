@@ -6,36 +6,25 @@
         xmlns:local="clr-namespace:Lab_10"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="920">
-    <Window.Resources>
-        <Style TargetType="Button">
-            <Setter Property="Margin" Value="20 8 20 8" />
-            <Setter Property="Width" Value="100" />
-            <Setter Property="Height" Value="30" />
-        </Style>
-    </Window.Resources>
-    <Grid Margin="0,0,3.6,-2">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200*"/>
-        </Grid.ColumnDefinitions>
+    <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-        <Grid Grid.Row="0" Grid.Column="0">
-            <DataGrid x:Name="bookrGrid" Grid.ColumnSpan="2" Margin="0,0,-0.4,46" Grid.RowSpan="2">
-            </DataGrid>
-        </Grid>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="100"/>
+    </Grid.RowDefinitions>
 
-        <StackPanel HorizontalAlignment="Center"  Grid.Row="1" Orientation="Horizontal" Grid.ColumnSpan="2" Margin="31,0.4,46.6,0" >
-            <ComboBox x:Name="CBTables" VerticalAlignment="Center" Margin="10,5.8,0,4" Text="Authors" SelectedValue="Authors" Grid.Row="1" SelectionChanged="CBTables_SelectionChanged" HorizontalAlignment="Left" Width="120" >
-                <ComboBoxItem>Authors</ComboBoxItem>
-                <ComboBoxItem>Books</ComboBoxItem>
-            </ComboBox>
-            <Button x:Name="updateButton" Content="Обновить" Click="updateButton_Click" />
-            <Button x:Name="deleteButton" Content="Удалить" Click="deleteButton_Click" />
-            <Button x:Name="addButton" Content="Добавить" Click="addButton_Click"/>
-            <Button x:Name="queryButton" Content="Запрос" Click="queryButton_Click"/>
-            <Button x:Name="updateItemButton" Content="Обновить запись" Click="updateItemButton_Click"/>
-        </StackPanel>
+        <TabControl Grid.Row="0" SelectionChanged="TabControl_SelectionChanged" Name="tabs">
+            <TabItem>
+                <TabItem.Header>Books</TabItem.Header>
+                <DataGrid x:Name="GameDataGrid" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn x:Name="UDK" Header="UDK" Binding="{Binding Path=UDK}" />
+                        <DataGridTextColumn x:Name="name"  Header="name" Binding="{Binding Path=name}"/>
+                        <DataGridTextColumn x:Name="auth"  Header="author" Binding="{Binding Path=auth}"/>
+                        <DataGridTextColumn x:Name="picture"  Header="name" Binding="{Binding Path=picture}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+
+        </TabControl>
     </Grid>
 </Window>

@@ -43,13 +43,16 @@ namespace Lab_06
         {
             foreach(Prod p in result)
             {
-                list.Remove(p);
+                using (DataBase db = new DataBase())
+                {
+                    db.Delete(p);
+                }
             }
-            DataContractJsonSerializer jsonForm = new DataContractJsonSerializer(typeof(List<Prod>));
-            using (FileStream f = new FileStream("products.json", FileMode.OpenOrCreate))
-            {
-                jsonForm.WriteObject(f, list);
-            }
+            //DataContractJsonSerializer jsonForm = new DataContractJsonSerializer(typeof(List<Prod>));
+            //using (FileStream f = new FileStream("products.json", FileMode.OpenOrCreate))
+            //{
+            //    jsonForm.WriteObject(f, list);
+            //}
             Clean();
         }
 
@@ -64,13 +67,16 @@ namespace Lab_06
         {
             try
             {
-                
-                DataContractJsonSerializer jsonForm = new DataContractJsonSerializer(typeof(List<Prod>));
-                using (FileStream f = new FileStream("products.json", FileMode.OpenOrCreate))
-                {
-                    list = (List<Prod>)jsonForm.ReadObject(f);
-                }
 
+                //DataContractJsonSerializer jsonForm = new DataContractJsonSerializer(typeof(List<Prod>));
+                //using (FileStream f = new FileStream("products.json", FileMode.OpenOrCreate))
+                //{
+                //    list = (List<Prod>)jsonForm.ReadObject(f);
+                //}
+                using (DataBase db = new DataBase())
+                {
+                    list = db.GetProds();
+                }
                 if (name.Text != null && name.Text != "")
                     result = new List<Prod>(list.Where(d => d.ToString().Contains(name.Text)));
 

@@ -11,15 +11,17 @@ namespace Lab_10
         
         public int Id { get; set; }
         public string Name { get; set; }
+        public string Country { get; set; }
         public List<Book> books = new List<Book>();
 
         public Author()
         { }
 
-        public Author(int id, string name)
+        public Author(int id, string name, string country)
         {
             this.Id = id;
             this.Name = name;
+            this.Country = country;
         }
     }
 }

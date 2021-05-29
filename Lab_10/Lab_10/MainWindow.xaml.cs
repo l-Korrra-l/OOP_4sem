@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Configuration;
+using System.Data.SqlClient;
 
 namespace Lab_10
 {
@@ -24,6 +26,25 @@ namespace Lab_10
         public MainWindow()
         {
             InitializeComponent();
+            string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+            // Создание подключения
+            SqlConnection connection = new SqlConnection(connectionString);
+            try
+            {
+                // Открываем подключение
+                connection.Open();
+                MessageBox.Show("Подключение открыто");
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                // закрываем подключение
+                connection.Close();
+                MessageBox.Show("Подключение закрыто...");
+            }
         }
 
         private void updateButton_Click(object sender, RoutedEventArgs e)

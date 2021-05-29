@@ -80,7 +80,10 @@ namespace Lab_06
                 case 1:
                     Find(sender,e);
                     break;
-
+                case 4:
+                    GridPrincipal.Children.Clear();
+                    GridPrincipal.Children.Add(new UControl(true));
+                    break;
                 default: break;
             }
         }

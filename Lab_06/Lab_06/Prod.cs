@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace Lab_06
         public int Quantity { get; set; }
         public int Price { get; set; }
         public string  FullDiscription { get; set; }
-
+        public byte[] Image { get; set; }
         public Prod() { }
         public Prod(int id, string name, string desc, int quantity, int price, string imgpath, string fulldiscription)
         {
@@ -27,6 +28,7 @@ namespace Lab_06
             Price = price;
             ImagePath = imgpath;
             FullDiscription = fulldiscription;
+            //Image = File.ReadAllBytes(ImagePath);
         }
 
         public string ToString()

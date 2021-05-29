@@ -65,7 +65,7 @@ namespace Lab_06
         {
             try
             {
-                Valid();
+               // Valid();
                 Prod product = new Prod();
                 product.Name = TextBox_Name.Text;
                 product.Price = Int32.Parse(TextBox_Price.Text);
@@ -80,7 +80,7 @@ namespace Lab_06
             }
             catch(Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -145,13 +145,16 @@ namespace Lab_06
         {
             try
             {
-
-
-                DataContractJsonSerializer jsonForm = new DataContractJsonSerializer(typeof(List<Prod>));
-                using (FileStream f = new FileStream("products.json", FileMode.OpenOrCreate))
+                using (DataBase db = new DataBase())
                 {
-                    parts = (List<Prod>)jsonForm.ReadObject(f);
+                    parts = db.GetProds();
                 }
+
+                //DataContractJsonSerializer jsonForm = new DataContractJsonSerializer(typeof(List<Prod>));
+                //using (FileStream f = new FileStream("products.json", FileMode.OpenOrCreate))
+                //{
+                //    parts = (List<Prod>)jsonForm.ReadObject(f);
+                //}
                 prList.li = parts;
                 history.History.Push(prList.SaveState());
                 
@@ -170,43 +173,60 @@ namespace Lab_06
             prod = a;
             parts.Add(a);
             prList.li = parts;
-            DataContractJsonSerializer jsonForm = new DataContractJsonSerializer(typeof(List<Prod>));
-            using (FileStream f = new FileStream("products.json", FileMode.OpenOrCreate))
+            //DataContractJsonSerializer jsonForm = new DataContractJsonSerializer(typeof(List<Prod>));
+            //using (FileStream f = new FileStream("products.json", FileMode.OpenOrCreate))
+            //{
+            //    jsonForm.WriteObject(f, parts);
+            //}
+            using (DataBase db = new DataBase())
             {
-                jsonForm.WriteObject(f, parts);
+                db.AddProd(a);
+                this.Close();
             }
-            
-            
+
             history.History.Push(prList.SaveState());
+
         }
 
-        public void SetList(List<Prod> prods)
-        {
-            DataContractJsonSerializer jsonForm = new DataContractJsonSerializer(typeof(List<Prod>));
-            using (FileStream f = new FileStream("products.json", FileMode.OpenOrCreate))
-            {
-                jsonForm.WriteObject(f, prods);
-            }
-        }
+        //public void SetList(List<Prod> prods)
+        //{
+        //    //DataContractJsonSerializer jsonForm = new DataContractJsonSerializer(typeof(List<Prod>));
+        //    //using (FileStream f = new FileStream("products.json", FileMode.OpenOrCreate))
+        //    //{
+        //    //    jsonForm.WriteObject(f, prods);
+        //    //}
+
+        //    using (DataBase db = new DataBase())
+        //    {
+        //        db.Trunc();
+        //    }
+        //    foreach(Prod a in prods)
+        //    using (DataBase db = new DataBase())
+        //    {
+        //        db.AddProd(a);
+        //        this.Close();
+        //    }
+
+        //}
 
         private void Undo_Click(object sender, RoutedEventArgs e)
         {
-            Memento memento = history.History.Pop();
-            prList.RestoreState(history.History.Pop());
-            SetList(prList.li);
-            history.History.Push(memento);
-            history.History.Push(prList.SaveState());
-   
- 
+            //Memento memento = history.History.Pop();
+            //prList.RestoreState(history.History.Pop());
+            //SetList(prList.li);
+            //history.History.Push(memento);
+            //history.History.Push(prList.SaveState());
+
+
         }
 
         private void Redo_Click(object sender, RoutedEventArgs e)
         {
-            Memento memento = history.History.Pop();
-            prList.RestoreState(history.History.Pop());
-            SetList(prList.li);
-            history.History.Push(memento);
-            history.History.Push(prList.SaveState());
+            //Memento memento = history.History.Pop();
+            //prList.RestoreState(history.History.Pop());
+            //SetList(prList.li);
+            //history.History.Push(memento);
+            //history.History.Push(prList.SaveState());
 
         }
     }
