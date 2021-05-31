@@ -64,3 +64,5 @@ C:\Users\User\Documents\ооп\OOP_4sem\Lab_06\Lab_06\obj\Debug\SearchControl.ba
 C:\Users\User\Documents\ооп\OOP_4sem\Lab_06\Lab_06\obj\Debug\Lab08\Buttons.baml
 C:\Users\User\Documents\ооп\OOP_4sem\Lab_06\Lab_06\obj\Debug\Lab08\Lab08.g.cs
 C:\Users\User\Documents\ооп\OOP_4sem\Lab_06\Lab_06\obj\Debug\Lab08\Lab08.baml
+C:\Users\User\Documents\ооп\OOP_4sem\Lab_06\Lab_06\obj\Debug\Lab10Wind.g.cs
+C:\Users\User\Documents\ооп\OOP_4sem\Lab_06\Lab_06\obj\Debug\Lab10Wind.baml

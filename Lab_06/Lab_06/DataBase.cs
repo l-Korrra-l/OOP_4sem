@@ -24,20 +24,26 @@ namespace Lab_06
                 connectionString = "server = LAPTOP-N0QMVJ9U; Trusted_Connection = Yes; DataBase = Products";
                 connection = new SqlConnection(connectionString);
                 connection.Open();
+                string str = "use  [Products]";
+                SqlCommand command = new SqlCommand(str, connection);
+                command.ExecuteNonQuery();
             }
             catch(Exception ex)
             {
-               // string connectionString = ConfigurationManager.ConnectionStrings["SqlCreate"].ConnectionString;
-                connection = new SqlConnection(connectionString);
-                connection.Open();
-                string str = "use master;create database [Products]" +
-                    "GO";
+                // string connectionString = ConfigurationManager.ConnectionStrings["SqlCreate"].ConnectionString;
+                //connection = new SqlConnection(connectionString);
+                //connection.Open();
+                try
+                {
+                    string str = "use master;create database [Products]";
 
-                SqlConnection sqlCon = new SqlConnection("Server=LAPTOP-N0QMVJ9U;Trusted_Connection = Yes;DataBase=master");
-                SqlCommand command = new SqlCommand(str, sqlCon);
-                sqlCon.Open();
-                command.ExecuteNonQuery();
-                sqlCon.Close();
+                    SqlConnection sqlCon = new SqlConnection("Server=LAPTOP-N0QMVJ9U;Trusted_Connection = Yes;DataBase=master");
+                    SqlCommand command = new SqlCommand(str, sqlCon);
+                    sqlCon.Open();
+                    command.ExecuteNonQuery();
+                    sqlCon.Close();
+                }catch(Exception exx)
+                { }
 
             }
 
@@ -51,11 +57,13 @@ namespace Lab_06
 
         public bool AddProd(Prod p)
         {
-            string sql = $"INSERT INTO Products( Name, Description, ImagePath, Quantity, Price, FullDiscription) VALUES " +
-                $"(\'{p.Name}\', \'{p.Description}\', \'{p.ImagePath}\', \'{p.Quantity}\', \'{p.Price}\', \'{p.FullDiscription}\')";
+            string sql = $"INSERT INTO Products( Name, Description, ImagePath, Quantity, Price, FullDiscription, Pic) VALUES " +
+                $"(\'{p.Name}\', \'{p.Description}\', \'{p.ImagePath}\', \'{p.Quantity}\', \'{p.Price}\', \'{p.FullDiscription}\',@image)";
             try
             {
                 SqlCommand command = new SqlCommand(sql, connection);
+                command.Parameters.Add("@image", SqlDbType.Image, 1000000);
+                command.Parameters["@image"].Value = p.Image;
                 command.ExecuteNonQuery();
                 return true;
             }
@@ -77,7 +85,7 @@ namespace Lab_06
 
                 SqlCommand command = new SqlCommand(sql, connection);
                 SqlDataReader info = command.ExecuteReader();
-                object n = -1, t = -1, i_p = -1, o_l = -1, q = -1, desc = -1, f_d = -1, p = -1, i=-1;
+                object n = -1, t = -1, i_p = -1, o_l = -1, q = -1, desc = -1, f_d = -1, p = -1, i=-1, im = -1;
                 while (info.Read())
                 {
                     i = info["Id"];
@@ -87,8 +95,17 @@ namespace Lab_06
                     q = info["Quantity"];
                     p = info["Price"];
                     f_d = info["FullDiscription"];
+                    im = info["Pic"];
 
-                    Prod a = new Prod(Convert.ToInt32(i), Convert.ToString(n), Convert.ToString(desc), Convert.ToInt32(q), Convert.ToInt32(p), Convert.ToString(i_p), Convert.ToString(f_d));
+                    Prod a = new Prod();
+                    if (i_p != null)
+                    {
+                        a = new Prod(Convert.ToInt32(i), Convert.ToString(n), Convert.ToString(desc), Convert.ToInt32(q), Convert.ToInt32(p), Convert.ToString(i_p), Convert.ToString(f_d));
+                    }
+                    else
+                    {
+                        a = new Prod(Convert.ToInt32(i), Convert.ToString(n), Convert.ToString(desc), Convert.ToInt32(q), Convert.ToInt32(p), Convert.ToString(f_d), (byte[])(im));
+                    }
                     prods.Add(a);
                 }
 
@@ -110,24 +127,31 @@ namespace Lab_06
             }
             catch (Exception ex)
             {
-                string str = 
-                    "USE [Products]" +
-     "CREATE TABLE[dbo].[Products](" +
-     "[Id][int] IDENTITY(0, 1) NOT NULL," +
-     "[Name] [nvarchar](50) NULL," +
-     "[Description] [nvarchar](50) NULL," +
-     "[ImagePath] [nvarchar](500) NULL," +
-     "[Quantity] [int] NULL," +
-     "[Price] [int] NULL," +
-     "[FullDiscription] [nvarchar](50) NULL" +
-     ") ON[PRIMARY]" ;
+                try
+                {
+                    string str =
+         "use [Products] " +
+         "CREATE TABLE[dbo].[Products](" +
+         "[Id][int] IDENTITY(0, 1) NOT NULL," +
+         "[Name] [nvarchar](50) NULL," +
+         "[Description] [nvarchar](50) NULL," +
+         "[ImagePath] [nvarchar](MAX) NULL," +
+         "[Quantity] [int] NULL," +
+         "[Price] [int] NULL," +
+         "[FullDiscription] [nvarchar](50) NULL," +
+         "[Pic] varbinary(MAX) NULL" +
+         ") ON[PRIMARY] " +
+         " ";
 
-                SqlConnection sqlCon = new SqlConnection("Server=LAPTOP-N0QMVJ9U;Trusted_Connection = Yes;DataBase=master");
-                SqlCommand command = new SqlCommand(str, sqlCon);
-                sqlCon.Open();
-                command.ExecuteNonQuery();
-                sqlCon.Close();
-                MessageBox.Show(ex.Message);
+                    SqlConnection sqlCon = new SqlConnection("Server=LAPTOP-N0QMVJ9U;Trusted_Connection = Yes;DataBase=master");
+                    SqlCommand command = new SqlCommand(str, sqlCon);
+                    sqlCon.Open();
+                    command.ExecuteNonQuery();
+                    sqlCon.Close();
+                    MessageBox.Show(ex.Message);
+                }
+                catch(Exception e)
+                { }
             }
             return prods;
         }
@@ -159,23 +183,25 @@ namespace Lab_06
             command.Transaction = transaction;
             try
             {
-                // выполняем две отдельные команды
+               
                 string img = @"C:\Users\User\Pictures\411491371.jpg";
-                command.CommandText = "INSERT INTO Products( Name, Description, ImagePath, Quantity, Price, FullDiscription) VALUES " +
-                $"(\'Transaction\', \'Transaction\', \'{img}\', \'1\', \'1\', \'Transaction\')";
+                command.CommandText = "INSERT INTO Products( Name, Description, ImagePath,  FullDiscription, Pic) VALUES " +
+                $"(\'Transaction\', \'Transaction\', \'{img}\', \'Transaction\',@image)";
+                command.Parameters.Add("@image", SqlDbType.Image, 1000000);
+                command.Parameters["@image"].Value = File.ReadAllBytes(img) ;
                 command.ExecuteNonQuery();
-                command.CommandText = "INSERT INTO Products( Name, Description, ImagePath, Quantity, Price, FullDiscription) VALUES " +
-                $"(\'Transaction1\', \'Transaction1\', \'{img}\', \'1\', \'1\', \'Transaction1\')";
+                command.CommandText = "INSERT INTO Products( Name, Description, ImagePath,  FullDiscription) VALUES " +
+                $"(\'Transaction1\', \'Transaction1\', \'{img}\',  \'Transaction1\')";
                 command.ExecuteNonQuery();
 
-                // подтверждаем транзакцию
+                
                 transaction.Commit();
-                Console.WriteLine("Данные добавлены в базу данных");
+                MessageBox.Show("Данные добавлены в базу данных");
                 return true;
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                MessageBox.Show(ex.Message);
                 transaction.Rollback();
                 return false;
             }
@@ -192,7 +218,7 @@ namespace Lab_06
 
                 SqlCommand command = new SqlCommand(sql, connection);
                 SqlDataReader info = command.ExecuteReader();
-                object n = -1, t = -1, i_p = -1, o_l = -1, q = -1, desc = -1, f_d = -1, p = -1, i = -1;
+                object n = -1, t = -1, i_p = -1, o_l = -1, q = -1, desc = -1, f_d = -1, p = -1, i = -1, im=-1;
                 while (info.Read())
                 {
                     i = info["Id"];
@@ -202,8 +228,17 @@ namespace Lab_06
                     q = info["Quantity"];
                     p = info["Price"];
                     f_d = info["FullDiscription"];
+                    im = info["image"];
 
-                    Prod a = new Prod(Convert.ToInt32(i), Convert.ToString(n), Convert.ToString(desc), Convert.ToInt32(q), Convert.ToInt32(p), Convert.ToString(i_p), Convert.ToString(f_d));
+                    Prod a = new Prod();
+                    if (i_p != null)
+                    {
+                        a = new Prod(Convert.ToInt32(i), Convert.ToString(n), Convert.ToString(desc), Convert.ToInt32(q), Convert.ToInt32(p), Convert.ToString(i_p), Convert.ToString(f_d));
+                    }
+                    else
+                    {
+                        a = new Prod(Convert.ToInt32(i), Convert.ToString(n), Convert.ToString(desc), Convert.ToInt32(q), Convert.ToInt32(p), Convert.ToString(f_d), (byte[])(im));
+                    }
                     prods.Add(a);
                 }
             }
@@ -233,11 +268,13 @@ namespace Lab_06
 
         public bool Update(int id, Prod p)
         {
-            string sql = $"UPDATE Products SET Name=\'{p.Name}\', Dascription = \'{p.Description}\', Quantity = \'{p.Quantity}\', Price = \'{p.Price}\' WHERE Id = {id}";
+            string sql = $"UPDATE Products SET Name=\'{p.Name}\', Description = \'{p.Description}\', Quantity = \'{p.Quantity}\', Price = \'{p.Price}\', Pic = @image  WHERE Id = {id}";
 
             try
             {
                 SqlCommand command = new SqlCommand(sql, connection);
+                command.Parameters.Add("@image", SqlDbType.Image, 1000000);
+                command.Parameters["@image"].Value = p.Image ?? File.ReadAllBytes(p.ImagePath);
                 command.ExecuteNonQuery();
                 return true;
             }
@@ -245,6 +282,57 @@ namespace Lab_06
             {
                 MessageBox.Show(ex.Message);
                 return false;
+            }
+        }
+
+        public void MyProcedure()
+        {
+            try
+            {
+
+                string Procedure = "ADOSHOW";
+                //connection.Open();
+                SqlCommand command = new SqlCommand(Procedure, connection);
+                // указываем, что команда представляет хранимую процедуру
+                command.CommandType = System.Data.CommandType.StoredProcedure;
+                var reader = command.ExecuteReader();
+
+                string result = "";
+                result += reader.GetName(0) + "\t" + reader.GetName(1) + "\t" + reader.GetName(2) + "\n";
+                while (reader.Read())
+                {
+                    result += reader.GetString(0) + '\t';
+                    result += reader.GetString(1) + '\t';
+                    result += reader.GetString(2) + '\n';
+
+                }
+                MessageBox.Show(result);
+                //connection.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                try
+                {
+                    string str =
+                            "CREATE PROCEDURE ADOSHOW " +
+                            "AS  " +
+                            "BEGIN " +
+                            "SELECT NAME, DESCRIPTION, ImagePath FROM Products " +
+                            "END go" +
+                            "";
+
+                    SqlConnection sqlCon = new SqlConnection("Server=LAPTOP-N0QMVJ9U;Trusted_Connection = Yes;DataBase=Products");
+                    SqlCommand command = new SqlCommand(str, sqlCon);
+                    sqlCon.Open();
+                    command.ExecuteNonQuery();
+                    sqlCon.Close();
+                    MessageBox.Show(ex.Message);
+                }
+                catch(Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
             }
         }
     }

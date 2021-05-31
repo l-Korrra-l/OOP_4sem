@@ -101,6 +101,18 @@
                         <TextBlock Text="Транзакция" VerticalAlignment="Center" FontSize="20"/>
                     </StackPanel>
                 </ListViewItem>
+                <ListViewItem Height="60" Foreground="White"  HorizontalAlignment="Left" Background="{x:Null}">
+                    <StackPanel Orientation="horizontal" >
+                        <materialDesign:PackIcon Width="30" Height="30" Kind="Home" VerticalAlignment="Center" Margin="5" />
+                        <TextBlock Text="10 лаба" VerticalAlignment="Center" FontSize="20"/>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem Height="60" Foreground="White"  HorizontalAlignment="Left" Background="{x:Null}">
+                    <StackPanel Orientation="horizontal" >
+                        <materialDesign:PackIcon Width="30" Height="30" Kind="Home" VerticalAlignment="Center" Margin="5" />
+                        <TextBlock Text="процедура" VerticalAlignment="Center" FontSize="20"/>
+                    </StackPanel>
+                </ListViewItem>
             </ListView>
             
         </Grid>

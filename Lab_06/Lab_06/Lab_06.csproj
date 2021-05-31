@@ -75,6 +75,10 @@
     <Compile Include="Lab08\Lab08.xaml.cs">
       <DependentUpon>Lab08.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Lab10.cs" />
+    <Compile Include="Lab10Wind.xaml.cs">
+      <DependentUpon>Lab10Wind.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Memento.cs" />
     <Compile Include="ProdList.cs" />
     <Compile Include="SearchControl.xaml.cs">
@@ -99,6 +103,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Lab08\Lab08.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lab10Wind.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

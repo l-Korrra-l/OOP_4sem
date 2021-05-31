@@ -28,7 +28,17 @@ namespace Lab_06
             Price = price;
             ImagePath = imgpath;
             FullDiscription = fulldiscription;
-            //Image = File.ReadAllBytes(ImagePath);
+            Image = File.ReadAllBytes(ImagePath);
+        }
+        public Prod(int id, string name, string desc, int quantity, int price,  string fulldiscription, byte[] image)
+        {
+            Id = id;
+            Name = name;
+            Description = desc;
+            Quantity = quantity;
+            Price = price;
+            FullDiscription = fulldiscription;
+            Image = image;
         }
 
         public string ToString()

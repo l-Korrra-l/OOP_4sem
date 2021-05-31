@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище READERModelContainer" CdmEntityContainer="READEREntities">
+    <EntitySetMapping Name="Books">
+      <EntityTypeMapping TypeName="READERModel.Books">
+        <MappingFragment StoreEntitySet="Books">
+          <ScalarProperty Name="isbn" ColumnName="isbn" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="author" ColumnName="author" />
+          <ScalarProperty Name="original_language" ColumnName="original_language" />
+          <ScalarProperty Name="year_of_release" ColumnName="year_of_release" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="rate" ColumnName="rate" />
+          <ScalarProperty Name="is_custom" ColumnName="is_custom" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="ganre" ColumnName="ganre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -45,20 +45,22 @@ namespace Lab_06
             List<Prod> parts = new List<Prod>();
             try
             {
-                DataContractJsonSerializer jsonForm = new DataContractJsonSerializer(typeof(List<Prod>));
-                    using (FileStream f = new FileStream("products.json", FileMode.OpenOrCreate))
-                    {
-                        parts = (List<Prod>)jsonForm.ReadObject(f);
-                    }
-                using (DataBase db = new DataBase())
-                {
-                    parts = db.GetProds();
-                }
 
+                DataBase db = new DataBase();
+                parts = db.GetProds();
+                //DataContractJsonSerializer jsonForm = new DataContractJsonSerializer(typeof(List<Prod>));
+                //    using (FileStream f = new FileStream("products.json", FileMode.OpenOrCreate))
+                //    {
+                //        parts = (List<Prod>)jsonForm.ReadObject(f);
+                //    }
+                if (parts.Count()==0)
+                {
+
+                }
             }
             catch (Exception e)
             {   
-                MessageBox.Show("а файла то нет");
+                MessageBox.Show(e.Message);
                 Prod pr = new Prod();
                 pr.Name = "Hi";
                 pr.Price = 0;

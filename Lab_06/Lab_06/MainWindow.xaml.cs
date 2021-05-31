@@ -84,6 +84,18 @@ namespace Lab_06
                     GridPrincipal.Children.Clear();
                     GridPrincipal.Children.Add(new UControl(true));
                     break;
+                case 5:
+                    DataBase dataBase = new DataBase();
+                    dataBase.Transaction();
+                    break;
+                case 6:
+                    Lab10Wind lab10 = new Lab10Wind();
+                    lab10.Show();
+                    break;
+                case 7:
+                    DataBase dataBas = new DataBase();
+                    dataBas.MyProcedure();
+                    break;
                 default: break;
             }
         }
